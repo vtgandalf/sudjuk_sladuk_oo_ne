@@ -12,7 +12,7 @@ def read_input(path):
     street_time = int(curr_line[3])
 
     streets.append({
-      "id": i + 1,
+      "id": i,
       "start_intersection": start_intersection,
       "end_intersection": end_intersection,
       "street_name": street_name,
@@ -27,7 +27,7 @@ def read_input(path):
       car_streets.append(curr_line[j + 1])
 
     cars.append({
-      "id": j + 1,
+      "id": j,
       "car_streets": car_streets
     })
 
