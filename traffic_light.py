@@ -1,13 +1,7 @@
-from enum import enum
-
-class LightState(enum):
-  RED = 1
-  GREEN = 2
-
 class TrafficLight:
   def __init__(self, id):
     self.id = id
-    self.state = LightState.RED
+    self.state = "RED"
     self.car_queue = []
 
     print("Created traffic light with id: %d" % (self.id))

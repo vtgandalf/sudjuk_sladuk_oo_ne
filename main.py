@@ -1,3 +1,9 @@
+from car import Car
+from path import Path
+from street import Street
+from intersection import Intersection
+from traffic_light import TrafficLight
+
 def read_input(path):
   file = open(path, "r")
   duration, num_intersections, num_streets, num_cars, points_per_car = map(lambda x: int(x), file.readline().replace("\n", "").split(" "))
@@ -43,7 +49,23 @@ def read_input(path):
 
 
 def main():
-  print(read_input("a.txt"))
+  input = read_input("a.txt")
+  streets = []
+  intersections = []
+  cars = []
+  points_per_car = []
+  for street in input["streets"]:
+    streets.append(Street(street["id"], street["street_name"], street["street_time"], [street["start_intersection"], street["end_intersection"]]))
+
+  for id in range(input["num_intersections"]):
+    intersections.append(Intersection(id, [], []))
+
+  for car in input["cars"]:
+    cars.append(Car(car["id"], car["car_streets"], []))
+
+
+
+  # print(input)
 
 if __name__ == "__main__":
     main()
